@@ -1,27 +1,23 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+ion-modal {
+  --height: fit-content;
+  --max-height: 75%;
+  --width: 75%;
+  --max-width: 500px;
+  --overflow: auto;
+  --border-radius: 4px;
+  --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --ion-backdrop-opacity: 0.8;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
+form {
+  padding: 16px;
+  overflow: auto;
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
+  h2 {
+    margin-top: 0;
+  }
 
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
+  ion-list {
+    margin-bottom: 16px;
+  }
 }

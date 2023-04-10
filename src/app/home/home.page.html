@@ -6,15 +6,63 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="ion-padding">
+
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Blank</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-button id="open-modal" expand="block">Open modal</ion-button>
+
+  <ion-modal #modal trigger="open-modal" [isOpen]="true">
+    <ng-template>
+      <form [formGroup]="form">
+        <h2>Modal</h2>
+
+        <ion-list lines="full">
+          <ion-radio-group [formControl]="form.controls.options">
+            <ion-list-header>
+              <ion-label>Options</ion-label>
+            </ion-list-header>
+            <ion-item>
+              <ion-radio value="1">
+                {{ 'options.label1' | transloco }}
+              </ion-radio>
+            </ion-item>
+            <ion-item>
+              <ion-radio value="2">
+                {{ 'options.label2' | transloco }}
+              </ion-radio>
+            </ion-item>
+            <ion-item>
+              <ion-radio value="3">
+                {{ 'options.label3' | transloco }}
+              </ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </ion-list>
+
+        <ion-list lines="full">
+          <ion-list-header>
+            <ion-label>Values</ion-label>
+          </ion-list-header>
+          <ion-item>
+            <ion-input [formControl]="form.controls.input1" [label]="'values.input1' | transloco"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input [formControl]="form.controls.input2" [label]="'values.input2' | transloco" placeholder="Fill this"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input [formControl]="form.controls.input3" [label]="'values.input3' | transloco" placeholder="And this"></ion-input>
+          </ion-item>
+        </ion-list>
+
+        <ion-button (click)="modal.dismiss()" expand="block">Close</ion-button>
+
+      </form>
+    </ng-template>
+  </ion-modal>
+
 </ion-content>
