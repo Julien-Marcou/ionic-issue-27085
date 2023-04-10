@@ -1,0 +1,7 @@
+{
+  "name": "ionic-issue-27085",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
